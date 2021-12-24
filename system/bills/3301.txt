@@ -1,0 +1,15 @@
+	welcome to bill
+
+ Bill Number : 3301
+ Customar Name : s
+ Phone Number : 4
+***********************************
+ item		QTY	price
+***********************************
+ Ice cream 		5	100
+***********************************
+ Sub Total  			100.0 EP
+ Service tax  			15.0 EP
+ Total Cost  			115.0 EP
+***********************************
+

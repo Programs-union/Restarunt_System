@@ -1,0 +1,15 @@
+	welcome to bill
+
+ Bill Number : 1601
+ Customar Name : ff
+ Phone Number : 55
+***********************************
+ item		QTY	price
+***********************************
+ Ice cream 		1	20
+***********************************
+ Sub Total  			20.0 EP
+ Service tax  			3.0 EP
+ Total Cost  			23.0 EP
+***********************************
+

@@ -1,0 +1,15 @@
+	welcome to bill
+
+ Bill Number : 4982
+ Customar Name : wf
+ Phone Number : 45
+***********************************
+ item		QTY	price
+***********************************
+ Burger 		5	250
+***********************************
+ Sub Total  			250.0 EP
+ Service tax  			37.5 EP
+ Total Cost  			287.5 EP
+***********************************
+
