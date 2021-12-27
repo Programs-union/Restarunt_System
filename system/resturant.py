@@ -1,4 +1,4 @@
-import os
+ import os
 from tkinter import *
 from tkinter import messagebox
 import random
@@ -8,9 +8,9 @@ class System_App:
     def __init__(self, root):
         self.root = root
         self.root.geometry('1350x700+0+0')
-        self.root.title('Restarunt System')
+        self.root.title('Restarunt MAZAK System')
         bg_color = '#091833'            # #074463
-        title = Label(self.root, text='Restarunt System', font=('times new roman', 30, 'bold'), bd=12,
+        title = Label(self.root, text='Restarunt MAZAK System', font=('times new roman', 30, 'bold'), bd=12,
                       relief=GROOVE, pady=2, bg=bg_color, fg='yellow').pack(fill=X)
 
         # *********** variabels *******
@@ -23,7 +23,7 @@ class System_App:
         self.Hotdog = IntVar()
 
         # *********** drinks **********
-        self.apple = IntVar()
+        self.Apple = IntVar()
         self.Orange = IntVar()
         self.Mango = IntVar()
         self.Lemonade = IntVar()
@@ -31,7 +31,7 @@ class System_App:
         self.Cold_Drinks = IntVar()
 
         # *********** dessert **********
-        self.ice_cream = IntVar()
+        self.Ice_cream = IntVar()
         self.Molten_Cake = IntVar()
         self.Apple_Pie = IntVar()
         self.Cheese_Cake = IntVar()
@@ -58,10 +58,10 @@ class System_App:
         # *********** customer **********
         self.C_name = StringVar()
         self.C_phone = StringVar()
-        self.bill_no = StringVar()
-        self.search_bill = StringVar()
-        bill = random.randint(1000,9999)
-        self.bill_no.set(bill)
+        self.order_no = StringVar()
+        self.search_order = StringVar()
+        order = random.randint(1000, 9999)
+        self.order_no.set(order)
 
         # *********** Customar Detail Frame *********
         Lb1 = LabelFrame(root,text='Customer Details', font=('times new roman', 18, 'bold') ,bd=10,
@@ -76,11 +76,11 @@ class System_App:
         C_phone_Lb.grid(row=0, column=2, padx=20, pady=5)
         C_phone_txt = Entry(Lb1, width=15, font=('arial', 15), bd=7, relief=SUNKEN, textvariable=self.C_phone).grid(row=0, column=3, padx=10, pady=5)
 
-        C_Bill_Lb = Label(Lb1, text='Order Number', font=('times new roman', 18 ,'bold'),bg=bg_color, fg='white')
-        C_Bill_Lb.grid(row=0, column=4, padx=20, pady=5)
-        C_Bill_txt = Entry(Lb1, width=15, font=('arial', 15), bd=7, relief=SUNKEN, textvariable=self.search_bill).grid(row=0, column=5, padx=10, pady=5)
+        C_Order_Lb = Label(Lb1, text='Order Number', font=('times new roman', 18 , 'bold'), bg=bg_color, fg='white')
+        C_Order_Lb.grid(row=0, column=4, padx=20, pady=5)
+        C_Order_txt = Entry(Lb1, width=15, font=('arial', 15), bd=7, relief=SUNKEN, textvariable=self.search_order).grid(row=0, column=5, padx=10, pady=5)
 
-        Bill_button = Button(Lb1,width=10, text='search', bd=7, font=('arial', 12, 'bold'), command=self.Find_Bill).grid(row=0, column=6, padx=10, pady=5)
+        Order_button = Button(Lb1, width=10, text='search', bd=7, font=('arial', 12, 'bold'), command=self.Find_Order).grid(row=0, column=6, padx=10, pady=5)
 
         # *********** food Frame *********
         Lb2 = LabelFrame(root, text='Food', font=('times new roman', 18, 'bold'), bd=10,
@@ -122,9 +122,9 @@ class System_App:
                          relief=GROOVE, pady=2, bg=bg_color, fg='gold')
         Lb3.place(x=290, y=160, width=260, height=380)
 
-        apple_Lb = Label(Lb3, text='Apple Juice', font=('times new roman', 16, 'bold'), bg=bg_color, fg='white')
-        apple_Lb.grid(row=0, column=0, padx=10, pady=10, sticky='w')
-        apple_txt = Entry(Lb3, width=6, font=('times new roman', 16, 'bold'), bd=5, relief=SUNKEN, textvariable=self.apple)\
+        Apple_Lb = Label(Lb3, text='Apple Juice', font=('times new roman', 16, 'bold'), bg=bg_color, fg='white')
+        Apple_Lb.grid(row=0, column=0, padx=10, pady=10, sticky='w')
+        Apple_txt = Entry(Lb3, width=6, font=('times new roman', 16, 'bold'), bd=5, relief=SUNKEN, textvariable=self.Apple)\
             .grid(row=0, column=1,padx=10,pady=10)
 
         Orange_Lb = Label(Lb3, text='Orange Juice', font=('times new roman', 16, 'bold'), bg=bg_color, fg='white')
@@ -152,14 +152,14 @@ class System_App:
         Cold_Drinks_txt = Entry(Lb3, width=6, font=('times new roman', 16, 'bold'), bd=5, relief=SUNKEN, textvariable=self.Cold_Drinks)\
             .grid(row=5, column=1,padx=10,pady=10)
 
-        # *********** desert Frame *********
+        # *********** dessert Frame *********
         Lb4 = LabelFrame(root, text='Desert', font=('times new roman', 18, 'bold'), bd=10,
                          relief=GROOVE, pady=2, bg=bg_color, fg='gold')
         Lb4.place(x=550, y=160, width=255, height=380)
 
-        ice_cream_Lb = Label(Lb4, text='Ice Cream', font=('times new roman', 16, 'bold'), bg=bg_color, fg='white')
-        ice_cream_Lb.grid(row=0, column=0, padx=10, pady=10, sticky='w')
-        ice_cream_txt = Entry(Lb4, width=6, font=('times new roman', 16, 'bold'), bd=5, relief=SUNKEN, textvariable=self.ice_cream)\
+        Ice_cream_Lb = Label(Lb4, text='Ice Cream', font=('times new roman', 16, 'bold'), bg=bg_color, fg='white')
+        Ice_cream_Lb.grid(row=0, column=0, padx=10, pady=10, sticky='w')
+        Ice_cream_txt = Entry(Lb4, width=6, font=('times new roman', 16, 'bold'), bd=5, relief=SUNKEN, textvariable=self.Ice_cream)\
             .grid(row=0, column=1, padx=10, pady=10)
 
         Molten_Cake_Lb = Label(Lb4, text='Molten Cake', font=('times new roman', 16, 'bold'), bg=bg_color, fg='white')
@@ -228,7 +228,7 @@ class System_App:
         Lb5 = Frame(root, bd=10,relief=GROOVE,bg=bg_color)
         Lb5.place(x=1065, y=160, width=300, height=380)
 
-        Bill_title = Label(Lb5, text='Order Area', font=('times new roman', 18, 'bold'), bd=7,bg=bg_color,fg='gold', relief=GROOVE).pack(fill=X)
+        Order_title = Label(Lb5, text='Order Area', font=('times new roman', 18, 'bold'), bd=7, bg=bg_color, fg='gold', relief=GROOVE).pack(fill=X)
         scroll_y = Scrollbar(Lb5, orient=VERTICAL)
         self.textarea = Text(Lb5, yscrollcommand=scroll_y.set)
         scroll_y.pack(side=RIGHT, fill=Y)
@@ -239,53 +239,58 @@ class System_App:
         Lb6 = LabelFrame(root, bd=10, relief=GROOVE,bg=bg_color, font=('times new roman', 18, 'bold'), text='Order Menu', fg='gold')
         Lb6.place(x=0, y=540, relwidth=1, height=160)
 
-        food = Label(Lb6, text='Total Food Cost', font=('arial', 14, 'bold'), fg='white',bg=bg_color)\
+        food = Label(Lb6, text='Total Food & Appetizers Cost', font=('arial', 14, 'bold'), fg='white',bg=bg_color)\
             .grid(row=0, column=0, sticky='w', padx=20, pady=1)
-        food_txt = Entry(Lb6, width=15, font=('arial', 14, 'bold'), bd=7, relief=SUNKEN, textvariable=self.food_price)\
-            .grid(row=0, column=1, padx=10, pady=1)
+        food_txt = Entry(Lb6, width=15, font=('arial', 14, 'bold'), bd=7, state='readonly', relief=SUNKEN, textvariable=self.food_price)\
+            .grid(row=0, column=1, padx=5, pady=1)
 
         drinks = Label(Lb6, text='Total Drinks Cost', font=('arial', 14, 'bold'), fg='white',bg=bg_color)\
             .grid(row=1, column=0, sticky='w', padx=20, pady=1)
-        drinks_txt = Entry(Lb6, width=15, font=('arial', 14, 'bold'), bd=7, relief=SUNKEN, textvariable=self.drinks_price)\
-            .grid(row=1, column=1, padx=10, pady=1)
+        drinks_txt = Entry(Lb6, width=15, font=('arial', 14, 'bold'), bd=7, state='readonly', relief=SUNKEN, textvariable=self.drinks_price)\
+            .grid(row=1, column=1, padx=5, pady=1)
 
         desert = Label(Lb6, text='Total Desert Cost', font=('arial', 14, 'bold'), fg='white',bg=bg_color)\
             .grid(row=2, column=0, sticky='w', padx=20, pady=1)
-        desert_txt = Entry(Lb6, width=15, font=('arial', 14, 'bold'), bd=7, relief=SUNKEN, textvariable=self.desert_price)\
-            .grid(row=2, column=1, padx=10, pady=1)
+        desert_txt = Entry(Lb6, width=15, font=('arial', 14, 'bold'), bd=7, state='readonly', relief=SUNKEN, textvariable=self.desert_price)\
+            .grid(row=2, column=1, padx=5, pady=1)
 
         sub_total = Label(Lb6, text='Sub Total', font=('arial', 14, 'bold'), fg='white',bg=bg_color)\
             .grid(row=0, column=2, sticky='w', padx=20, pady=1)
-        sub_total_txt = Entry(Lb6, width=15, font=('arial', 14, 'bold'), bd=7, relief=SUNKEN, textvariable=self.sub_total_cost)\
-            .grid(row=0, column=3, padx=10, pady=1)
+        sub_total_txt = Entry(Lb6, width=15, font=('arial', 14, 'bold'), bd=7, state='readonly', relief=SUNKEN, textvariable=self.sub_total_cost)\
+            .grid(row=0, column=3, padx=5, pady=1)
 
         service = Label(Lb6, text='Service', font=('arial', 14, 'bold'), fg='white',bg=bg_color)\
             .grid(row=1, column=2, sticky='w', padx=20, pady=1)
-        service_txt = Entry(Lb6, width=15, font=('arial', 14, 'bold'), bd=7, relief=SUNKEN, textvariable=self.service_tax)\
-            .grid(row=1, column=3, padx=10, pady=1)
+        service_txt = Entry(Lb6, width=15, font=('arial', 14, 'bold'), bd=7, state='readonly', relief=SUNKEN, textvariable=self.service_tax)\
+            .grid(row=1, column=3, padx=5, pady=1)
 
         total = Label(Lb6, text='Total Cost', font=('arial', 14, 'bold'), fg='white',bg=bg_color)\
             .grid(row=2, column=2, sticky='w', padx=20, pady=1)
-        total_txt = Entry(Lb6, width=15, font=('arial', 14, 'bold'), bd=7, relief=SUNKEN, textvariable=self.total_cost)\
-            .grid(row=2, column=3, padx=10, pady=1)
+        total_txt = Entry(Lb6, width=15, font=('arial', 14, 'bold'), bd=7, state='readonly', relief=SUNKEN, textvariable=self.total_cost)\
+            .grid(row=2, column=3, padx=5, pady=1)
 
         # ******** botton frame ********
         btn_fr = Frame(Lb6, bd=7, relief=GROOVE)
-        btn_fr.place(x=750, width=572, height=115)
+        btn_fr.place(x=842, width=490, height=115)
 
-        total_btn = Button(btn_fr, text='Total', bg='cadetblue', fg='white', bd=7, pady=25, width=10, command=self.Total,
+        total_btn = Button(btn_fr, text='Total', bg='cadetblue', fg='white', bd=7, pady=25, width=5, command=self.Total,
                            font=(('times new roman'), 15, 'bold')).grid(row=0, column=0, padx=0, pady=5)
 
-        recipt_btn = Button(btn_fr, text='Recipt', bg='cadetblue', fg='white', bd=7, pady=25, width=10,
-                        font=(('times new roman'), 15, 'bold'), command=self.bill_area).grid(row=0, column=1, padx=0, pady=5)
+        recipt_btn = Button(btn_fr, text='Recipt', bg='cadetblue', fg='white', bd=7, pady=25, width=5,
+                            font=(('times new roman'), 15, 'bold'), command=self.Order_area).grid(row=0, column=1, padx=0, pady=5)
+
+        Menu_btn = Button(btn_fr, text='Menu', bg='cadetblue', fg='white', bd=7, pady=25, width=5,
+                        font=(('times new roman'), 15, 'bold'), command=self.Menu).grid(row=0, column=2, padx=0, pady=5)
 
         # exit
-        save_btn = Button(btn_fr, text='Save', bg='cadetblue', fg='white', bd=7, pady=25, width=10,command=self.Save,
-                          font=(('times new roman'), 15, 'bold')).grid(row=0, column=2, padx=0, pady=5)
+        save_btn = Button(btn_fr, text='Save', bg='cadetblue', fg='white', bd=7, pady=25, width=5,command=self.Save,
+                          font=(('times new roman'), 15, 'bold')).grid(row=0, column=3, padx=0, pady=5)
 
         reset_btn = Button(btn_fr, text='Reset', bg='cadetblue', fg='white', bd=7, pady=25, command=self.Reset
-                           , width=10, font=(('times new roman'), 15, 'bold')).grid(row=0, column=3, padx=0, pady=5)
+                           , width=5, font=(('times new roman'), 15, 'bold')).grid(row=0, column=4, padx=0, pady=5)
 
+        exit_btn = Button(btn_fr, text='Exit', bg='cadetblue', fg='white', bd=7, pady=25, command=self.Exit
+                           , width=5, font=(('times new roman'), 15, 'bold')).grid(row=0, column=5, padx=0, pady=5)
         # self.welcome()
 
     def Total(self):
@@ -297,9 +302,9 @@ class System_App:
         self.f_Hotdog_p = self.Hotdog.get()*45
         self.total_food_price = float(self.f_Burger_p + self.f_Pizza_p + self.f_Spaghetti_p +
                                       self.f_Chicken_Naggets_p + self.f_Mexican_Tacos_p + self.f_Hotdog_p)
-        self.food_price.set(str(self.total_food_price) + ' EP')
+        # self.food_price.set(str(self.total_food_price) + ' EP')
 
-        self.dr_apple_p = self.apple.get()*30
+        self.dr_apple_p = self.Apple.get() * 30
         self.dr_Orange_p = self.Orange.get()*30
         self.dr_Mango_p = self.Mango.get()*40
         self.dr_Lemonade_p = self.Lemonade.get()*30
@@ -309,7 +314,7 @@ class System_App:
                                         self.dr_Lemonade_p + self.dr_Coffe_p + self.dr_Cold_Drinks_p)
         self.drinks_price.set(str(self.total_drinks_price) + ' EP')
 
-        self.ds_ice_cream_p = self.ice_cream.get()*20
+        self.ds_ice_cream_p = self.Ice_cream.get() * 20
         self.ds_Molten_Cake_p = self.Molten_Cake.get()*30
         self.ds_Apple_Pie_p = self.Apple_Pie.get()*25
         self.ds_Cheese_Cake_p = self.Cheese_Cake.get()*35
@@ -327,7 +332,7 @@ class System_App:
         self.a_Cole_Slaw_p = self.Cole_Slaw.get()*15
         self.total_appetizers_price = float(self.a_Salad_p + self.a_French_Fries_p + self.a_Soup_p +
                                         self.a_Onion_Rings_p + self.a_Chicken_Wings_p + self.a_Cole_Slaw_p)
-        self.appetizers_price.set(str(self.total_appetizers_price) + ' EP')
+        self.food_price.set(str(self.total_appetizers_price + self.total_food_price) + ' EP')
 
         self.sub_total = float(self.total_food_price + self.total_drinks_price + self.total_desert_price
                                + self.total_appetizers_price)
@@ -338,9 +343,12 @@ class System_App:
         self.total_cost.set(str(self.total_price) + ' EP')
 
     def Recipt(self):
+        # self.textarea.configure(font=('time new roman', 11, 'bold'))
         self.textarea.delete('1.0', END)
-        self.textarea.insert(END, '\twelcome to bill\n\n')
-        self.textarea.insert(END, f' Bill Number : {self.bill_no.get()}\n')
+        self.textarea.insert(END, ' ' + '*' * 30 + '\n')
+        self.textarea.insert(END, ' * Welcome to MAZAK Resturant *\n')
+        self.textarea.insert(END, ' ' + '*' * 30 + '\n')
+        self.textarea.insert(END, f' Order Number : {self.order_no.get()}\n')
         self.textarea.insert(END, f' Customar Name : {self.C_name.get()}\n')
         self.textarea.insert(END, f' Phone Number : {self.C_phone.get()}\n')
         self.textarea.insert(END, '*'*32+'\n')
@@ -348,7 +356,7 @@ class System_App:
             self.textarea.insert(END, f' item\t\tQTY\tprice\n')
             self.textarea.insert(END, '*' * 32 + '\n')
 
-    def bill_area(self):
+    def Order_area(self):
         if self.C_name.get() == '':
             messagebox.showerror('Error','Please,Enter customar name')
         elif self.C_phone.get() == '':
@@ -373,8 +381,8 @@ class System_App:
                 self.textarea.insert(END, f' Hotdog \t\t{self.Hotdog.get()}\t{self.f_Hotdog_p}\n')
 
 
-            if self.apple.get() != 0:
-                self.textarea.insert(END, f' Apple Juice \t\t{self.apple.get()}\t{self.dr_apple_p}\n')
+            if self.Apple.get() != 0:
+                self.textarea.insert(END, f' Apple Juice \t\t{self.Apple.get()}\t{self.dr_apple_p}\n')
             if self.Orange.get() != 0:
                 self.textarea.insert(END, f' Orange Juice \t\t{self.Pizza.get()}\t{self.dr_Orange_p}\n')
             if self.Mango.get() != 0:
@@ -386,8 +394,8 @@ class System_App:
             if self.Cold_Drinks.get() != 0:
                 self.textarea.insert(END, f' Cold Drinks \t\t{self.Cold_Drinks.get()}\t{self.dr_Cold_Drinks_p}\n')
 
-            if self.ice_cream.get() != 0:
-                self.textarea.insert(END, f' Ice cream \t\t{self.ice_cream.get()}\t{self.ds_ice_cream_p}\n')
+            if self.Ice_cream.get() != 0:
+                self.textarea.insert(END, f' Ice cream \t\t{self.Ice_cream.get()}\t{self.ds_ice_cream_p}\n')
             if self.Molten_Cake.get() != 0:
                 self.textarea.insert(END, f' Molten Cake \t\t{self.Molten_Cake.get()}\t{self.ds_Molten_Cake_p}\n')
             if self.Apple_Pie.get() != 0:
@@ -422,21 +430,21 @@ class System_App:
                 self.textarea.insert(END, '*' * 32 + '\n')
 
     def Save(self):
-        op = messagebox.askyesno('Save Bill','Do you want to save this order ?')
+        op = messagebox.askyesno('Save Order','Do you want to save this order ?')
         if op > 0 :
             self.bill_data = self.textarea.get('1.0', END)
-            f1 = open("bills/"+str(self.bill_no.get())+".txt","w")
+            f1 = open("Order/" + str(self.order_no.get()) + ".txt", "w")
             f1.write(self.bill_data)
             f1.close()
-            messagebox.showinfo('Save', f'Order no. {self.bill_no.get()} saved successfully')
+            messagebox.showinfo('Save', f'Order no. {self.order_no.get()} saved successfully')
         else:
             return
 
-    def Find_Bill(self):
+    def Find_Order(self):
         present = 'no'
-        for i in os.listdir("bills/"):
-            if i.split('.')[0] == self.search_bill.get():
-                f1 = open("bills/" + i, "r")
+        for i in os.listdir("Order/"):
+            if i.split('.')[0] == self.search_order.get():
+                f1 = open("Order/" + i, "r")
                 self.textarea.delete('1.0', END)
                 for j in f1:
                     self.textarea.insert(END, j)
@@ -456,7 +464,7 @@ class System_App:
             self.Hotdog.set(0)
 
             # *********** drinks **********
-            self.apple.set(0)
+            self.Apple.set(0)
             self.Orange.set(0)
             self.Mango.set(0)
             self.Lemonade.set(0)
@@ -464,7 +472,7 @@ class System_App:
             self.Cold_Drinks.set(0)
 
             # *********** dessert **********
-            self.ice_cream.set(0)
+            self.Ice_cream.set(0)
             self.Molten_Cake.set(0)
             self.Apple_Pie.set(0)
             self.Cheese_Cake.set(0)
@@ -490,10 +498,10 @@ class System_App:
             # *********** customer **********
             self.C_name.set('')
             self.C_phone.set('')
-            self.bill_no.set('')
-            self.search_bill.set('')
-            bill = random.randint(1000, 9999)
-            self.bill_no.set(bill)
+            self.order_no.set('')
+            self.search_order.set('')
+            order = random.randint(1000, 9999)
+            self.order_no.set(order)
             self.Recipt()
 
             # self.textarea.delete('1.0',END)
@@ -502,6 +510,169 @@ class System_App:
         op = messagebox.askyesno('Exit', 'Do you really want to exit ?')
         if op > 0:
             self.root.destroy()
+
+    def Menu(self):
+        self.menu = Tk()
+        self.menu.geometry('1200x430+0+0')
+        self.menu.title('Restarunt MAZAK Menu')
+        bg_color = '#091833'  # #074463
+        title = Label(self.menu, text='Restarunt MAZAK Menu', font=('times new roman', 30, 'bold'), bd=12,
+                      relief=GROOVE, pady=2, bg=bg_color, fg='yellow').pack(fill=X)
+
+        f_food = LabelFrame(self.menu, text='Food', font=('times new roman', 18, 'bold'), bd=10,
+                         relief=GROOVE, pady=2, bg=bg_color, fg='gold')
+        f_food.place(x=0, y=70, width=300, height=360)
+
+        burger_Lb = Label(f_food, text='Burger\t\t70 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        burger_Lb.grid(row=0, column=0, padx=10, pady=10, sticky='w')
+        # burger_txt = Entry(f_food, width=6, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,
+        #                    textvariable=self.burger_var,bg='lightgreen') \
+        #     .grid(row=0, column=1, padx=10, pady=10)
+
+        pizza_Lb = Label(f_food, text='Pizza\t\t60 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        pizza_Lb.grid(row=1, column=0, padx=10, pady=10, sticky='w')
+        # pizza_txt = Entry(f_food, width=6, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,
+        #                   textvariable=self.pizza_var,bg='lightgreen') \
+        #     .grid(row=1, column=1, padx=10, pady=10)
+
+        spaghetti_Lb = Label(f_food, text='Spaghetti\t50 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        spaghetti_Lb.grid(row=2, column=0, padx=10, pady=10, sticky='w')
+        # spaghetti_txt = Entry(f_food, width=6, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,
+        #                       textvariable=self.spaghetti_var,bg='lightgreen') \
+        #     .grid(row=2, column=1, padx=10, pady=10)
+
+        chicken_Naggets_Lb = Label(f_food, text='Chicken Naggets\t40 EP', font=('times new roman', 18, 'bold'), bg=bg_color,
+                                   fg='white')
+        chicken_Naggets_Lb.grid(row=3, column=0, padx=10, pady=10, sticky='w')
+        # chicken_Naggets_txt = Entry(f_food, width=6, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,
+        #                             textvariable=self.chicken_Naggets_var,bg='lightgreen') \
+        #     .grid(row=3, column=1, padx=10, pady=10)
+
+        mexican_Tacos_Lb = Label(f_food, text='Mexican Tacos\t45 EP', font=('times new roman', 18, 'bold'), bg=bg_color,
+                                 fg='white')
+        mexican_Tacos_Lb.grid(row=4, column=0, padx=10, pady=10, sticky='w')
+        # mexican_Tacos_txt = Entry(f_food, width=6, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,
+        #                           textvariable=self.mexican_Tacos_var,bg='lightgreen') \
+        #     .grid(row=4, column=1, padx=10, pady=10)
+
+        hotdog_Lb = Label(f_food, text='Hotdog\t\t45 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        hotdog_Lb.grid(row=5, column=0, padx=10, pady=10, sticky='w')
+        # hotdog_txt = Entry(f_food, width=6, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,bg='lightgreen',
+        #                    textvariable=self.hotdog_var).grid(row=5, column=1, padx=10, pady=10)
+
+        # *********** drinks Frame *********
+        F_drinks = LabelFrame(self.menu, text='Drinks', font=('times new roman', 18, 'bold'), bd=10,
+                         relief=GROOVE, pady=2, bg=bg_color, fg='gold')
+        F_drinks.place(x=300, y=70, width=300, height=360)
+
+        apple_Lb = Label(F_drinks, text='Apple Juice\t30 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        apple_Lb.grid(row=0, column=0, padx=10, pady=10, sticky='w')
+        # apple_txt = Entry(F_drinks, width=6, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,
+        #                   textvariable=self.Apple,bg='lightgreen') \
+        #     .grid(row=0, column=1, padx=10, pady=10)
+
+        Orange_Lb = Label(F_drinks, text='Orange Juice\t30 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        Orange_Lb.grid(row=1, column=0, padx=10, pady=10, sticky='w')
+        # Orange_txt = Entry(F_drinks, width=6, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,
+        #                    textvariable=self.Orange,bg='lightgreen') \
+        #     .grid(row=1, column=1, padx=10, pady=10)
+
+        Mango_Lb = Label(F_drinks, text='Mango Juice\t40 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        Mango_Lb.grid(row=2, column=0, padx=10, pady=10, sticky='w')
+        # Mango_txt = Entry(F_drinks, width=6, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,
+        #                   textvariable=self.Mango,bg='lightgreen') \
+        #     .grid(row=2, column=1, padx=10, pady=10)
+
+        Lemonade_Lb = Label(F_drinks, text='Lemonade\t30 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        Lemonade_Lb.grid(row=3, column=0, padx=10, pady=10, sticky='w')
+        # Lemonade_txt = Entry(F_drinks, width=6, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,
+        #                      textvariable=self.Lemonade,bg='lightgreen') \
+        #     .grid(row=3, column=1, padx=10, pady=10)
+
+        Coffe_Lb = Label(F_drinks, text='Coffe\t\t35 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        Coffe_Lb.grid(row=4, column=0, padx=10, pady=10, sticky='w')
+        # Coffe_txt = Entry(F_drinks, width=6, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,
+        #                   textvariable=self.Coffe,bg='lightgreen') \
+        #     .grid(row=4, column=1, padx=10, pady=10)
+
+        Cold_Drinks_Lb = Label(F_drinks, text='Cold Drinks\t25 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        Cold_Drinks_Lb.grid(row=5, column=0, padx=10, pady=10, sticky='w')
+        # Cold_Drinks_txt = Entry(F_drinks, width=6, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,
+        #                         textvariable=self.Cold_Drinks,bg='lightgreen') \
+        #     .grid(row=5, column=1, padx=10, pady=10)
+
+        # *********** dessert Frame *********
+        F_dessert = LabelFrame(self.menu, text='Desert', font=('times new roman', 18, 'bold'), bd=10,
+                         relief=GROOVE, pady=2, bg=bg_color, fg='gold')
+        F_dessert.place(x=600, y=70, width=300, height=360)
+
+        ice_cream_Lb = Label(F_dessert, text='Ice Cream\t20 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        ice_cream_Lb.grid(row=0, column=0, padx=10, pady=10, sticky='w')
+        # ice_cream_txt = Entry(F_dessert, width=6, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,bg='lightgreen',
+        #                       textvariable=self.Ice_cream).grid(row=0, column=1, padx=10, pady=10)
+
+        Molten_Cake_Lb = Label(F_dessert, text='Molten Cake\t30 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        Molten_Cake_Lb.grid(row=1, column=0, padx=10, pady=10, sticky='w')
+        # Molten_Cake_txt = Entry(F_dessert, width=6, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,bg='lightgreen',
+        #                         textvariable=self.Molten_Cake).grid(row=1, column=1, padx=10, pady=10)
+
+        Apple_Pie_Lb = Label(F_dessert, text='Apple Pie\t25 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        Apple_Pie_Lb.grid(row=2, column=0, padx=10, pady=10, sticky='w')
+        # Apple_Pie_txt = Entry(F_dessert, width=6, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,bg='lightgreen',
+        #                       textvariable=self.Apple_Pie).grid(row=2, column=1, padx=10, pady=10)
+
+        Cheese_Cake_Lb = Label(F_dessert, text='Cheese Cake\t35 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        Cheese_Cake_Lb.grid(row=3, column=0, padx=10, pady=10, sticky='w')
+        # Cheese_Cake_txt = Entry(F_dessert, width=6, font=('times new roman', 16, 'bold'), bd=5, relief=SUNKEN,bg='lightgreen',
+        #                         textvariable=self.Cheese_Cake).grid(row=3, column=1, padx=10, pady=10)
+
+        Waffles_Lb = Label(F_dessert, text='Waffles\t\t30 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        Waffles_Lb.grid(row=4, column=0, padx=10, pady=10, sticky='w')
+        # Waffles_txt = Entry(F_dessert, width=6, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,bg='lightgreen',
+        #                     textvariable=self.Waffles).grid(row=4, column=1, padx=10, pady=10)
+
+        Cookies_Lb = Label(F_dessert, text='Cookies\t\t20 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        Cookies_Lb.grid(row=5, column=0, padx=10, pady=10, sticky='w')
+        # Cookies_txt = Entry(F_dessert, width=6, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,bg='lightgreen',
+        #                     textvariable=self.Cookies).grid(row=5, column=1, padx=10, pady=10)
+
+        # *********** appetizers Frame *********
+        F_appetizers = LabelFrame(self.menu, text='Appetizers', font=('times new roman', 18, 'bold'), bd=10,
+                         relief=GROOVE, pady=2, bg=bg_color, fg='gold')
+        F_appetizers.place(x=900, y=70, width=300, height=360)
+
+        Salad_Lb = Label(F_appetizers, text='Salad\t\t20 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        Salad_Lb.grid(row=0, column=0, padx=10, pady=10, sticky='w')
+        # Salad_txt = Entry(F_appetizers, width=5, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,bg='lightgreen',
+        #                   textvariable=self.Salad).grid(row=0, column=1, padx=5, pady=10)
+
+        French_Fries_Lb = Label(F_appetizers, text='French Fries\t20 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        French_Fries_Lb.grid(row=1, column=0, padx=10, pady=10, sticky='w')
+        # French_Fries_txt = Entry(F_appetizers, width=5, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,bg='lightgreen',
+        #                          textvariable=self.French_Fries).grid(reliefow=1, column=1, padx=5, pady=10)
+
+        Soup_Lb = Label(F_appetizers, text='Soup\t\t25 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        Soup_Lb.grid(row=2, column=0, padx=10, pady=10, sticky='w')
+        # Soup_txt = Entry(F_appetizers, width=5, font=('times new roman', 18, 'bold'),bg='lightgreen', bd=5, relief=SUNKEN,
+        #                  textvariable=self.Soup).grid(row=2, column=1, padx=5, pady=10)
+
+        Onion_Rings_Lb = Label(F_appetizers, text='Onion Rings\t25 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        Onion_Rings_Lb.grid(row=3, column=0, padx=10, pady=10, sticky='w')
+        # Onion_Rings_txt = Entry(F_appetizers, width=5, font=('times new roman', 18, 'bold'), bd=5, relief=SUNKEN,bg='lightgreen',
+        #                         textvariable=self.Onion_Rings).grid(row=3, column=1, padx=5, pady=10)
+
+        Chicken_Wings_Lb = Label(F_appetizers, text='Chicken Wings\t35 EP', font=('times new roman', 18, 'bold'), bg=bg_color,
+                                 fg='white')
+        Chicken_Wings_Lb.grid(row=4, column=0, padx=10, pady=10, sticky='w')
+        # Chicken_Wings_txt = Entry(F_appetizers, width=5, font=('times new roman', 18, 'bold'),bg='lightgreen', bd=5, relief=SUNKEN,
+        #                           textvariable=self.Chicken_Wings).grid(row=4, column=1, padx=5, pady=10)
+
+        Cole_Slaw_Lb = Label(F_appetizers, text='Cole Slaw\t15 EP', font=('times new roman', 18, 'bold'), bg=bg_color, fg='white')
+        Cole_Slaw_Lb.grid(row=5, column=0, padx=10, pady=10, sticky='w')
+        # Cole_Slaw_txt = Entry(F_appetizers, width=5, font=('times new roman', 18, 'bold'),bg='lightgreen', bd=5, relief=SUNKEN,
+        #                       textvariable=self.Cole_Slaw).grid(row=5, column=1, padx=5, pady=10)
+
+        self.menu.mainloop()
 
 
 restarunt = Tk()
