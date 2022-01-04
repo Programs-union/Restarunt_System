@@ -1,0 +1,16 @@
+ ******************************
+ * Welcome to MAZAK Resturant *
+ ******************************
+ Order Number : 9105
+ Customar Name : A
+ Phone Number : 55
+*******************************
+ item		QTY	price
+*******************************
+ Salad 		1	20
+*******************************
+ Sub Total 			20.0 EP
+ Service tax			3.0 EP
+ Total Cost			23.0 EP
+*******************************
+

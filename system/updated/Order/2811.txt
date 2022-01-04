@@ -1,0 +1,16 @@
+ ******************************
+ * Welcome to MAZAK Resturant *
+ ******************************
+ Order Number : 2811
+ Customar Name : Ahmed Emad
+ Phone Number : 01045627893
+*******************************
+ item		QTY	price
+*******************************
+ Apple Juice 		1	30
+*******************************
+ Sub Total 			30.0 EP
+ Service tax			4.5 EP
+ Total Cost			34.5 EP
+*******************************
+

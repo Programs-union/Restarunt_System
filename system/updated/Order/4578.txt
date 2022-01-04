@@ -1,0 +1,16 @@
+ ******************************
+ * Welcome to MAZAK Resturant *
+ ******************************
+ Order Number : 4578
+ Customar Name : okk
+ Phone Number : 53561
+********************************
+ item		QTY	price
+********************************
+ Cole Slaw 		5	75
+********************************
+ Sub Total  			75.0 EP
+ Service tax  			11.25 EP
+ Total Cost  			86.25 EP
+********************************
+
